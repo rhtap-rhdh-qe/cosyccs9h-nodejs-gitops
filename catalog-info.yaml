@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cosyccs9h-nodejs-gitops
+  description: This is GitOps manifest for cosyccs9h-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=cosyccs9h-nodejs
+    backstage.io/kubernetes-id: cosyccs9h-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: cosyccs9h-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cosyccs9h-nodejs
